@@ -23,20 +23,13 @@ import javax.xml.bind.annotation.XmlRootElement;
             query = "SELECT o FROM Transporte o"),
     
     @NamedQuery(name = "transporte.BuscarPorId",
-            query = "SELECT o FROM Transporte o WHERE o.id_transporte = "
-                    + ":id_transporte"),
+            query = "SELECT o FROM Transporte o WHERE o.id_transporte= :id_transporte"),
     
     @NamedQuery(name = "transporte.BuscarPorNombre",
-            query = "SELECT o FROM Transporte o WHERE o.nombreTransporte = "
-                    + ":nombreTransporte"),
-    
-    @NamedQuery(name = "transporte.BuscarPorTipo",
-            query = "SELECT o FROM Transporte o WHERE o.tipoTransporte = "
-                    + ":tipoTransporte"),
+            query = "SELECT o FROM Transporte o WHERE o.nombreTransporte= :nombreTransporte"),
     
     @NamedQuery(name = "transporte.BuscarPorHorario",
-            query = "SELECT o FROM Transporte o WHERE o.horarioTransporte = "
-                    + ":horarioTransporte")
+            query = "SELECT o FROM Transporte o WHERE o.horarioTransporte= :horarioTransporte")
 })
 
 public class Transporte implements Serializable {
