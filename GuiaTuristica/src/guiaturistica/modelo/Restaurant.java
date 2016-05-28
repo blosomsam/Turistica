@@ -1,11 +1,14 @@
 package guiaturistica.modelo;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -47,7 +50,10 @@ public class Restaurant implements  Serializable{
    
     @Column (name = "valorPromedioPlato")
     private double  valorPromedioPlato;
-
+    
+    //Relación con sitio Muchos a muchos
+    @ManyToMany(mappedBy = "restaurant",cascade = CascadeType.ALL, targetEntity = Sitio.class)
+    private List<Sitio> sitio;
     
     public Long getId_restaurant() {
         return id_restaurant;
@@ -87,6 +93,14 @@ public class Restaurant implements  Serializable{
 
     public void setValorPromedioPlato(double valorPromedioPlato) {
         this.valorPromedioPlato = valorPromedioPlato;
+    }
+
+    public List<Sitio> getSitio() {
+        return sitio;
+    }
+
+    public void setSitio(List<Sitio> sitio) {
+        this.sitio = sitio;
     }
     
 }

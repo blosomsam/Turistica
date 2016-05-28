@@ -1,11 +1,17 @@
 package guiaturistica.modelo;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -38,6 +44,9 @@ public class Sitio implements  Serializable {
 
     @Column(name = "nombreSitio")
     private String nombreSitio;
+    
+    @Column(name = "DireccionSitio")
+    private String DireccionSitio;
 
     @Column(name = "descripcionSitio")
     private String descripcionSitio;
@@ -60,7 +69,19 @@ public class Sitio implements  Serializable {
     @Column(name = "caracteristicasSitio")
     private String caracteristicasSitio;  
     
+   //Relació de muchos sitios a un registrador 
+   @ManyToOne
+   private Persona persona;
+   
+   //Relación de muchos Sitios  a muchos Restaurantes
+   @ManyToMany(cascade = CascadeType.ALL)
+   @JoinTable(name = "Sitio_Restaurant", joinColumns = @JoinColumn(
+        name = "id_Sitio", referencedColumnName = "id_Sitio"),
+        inverseJoinColumns = @JoinColumn(name = "id_Restaurant", 
+        referencedColumnName = "id_Restaurant"))
+   private List<Restaurant> restaurant;
 
+    //Métodos set y get
     public Long getId_sitio() {
         return id_sitio;
     }
@@ -131,5 +152,29 @@ public class Sitio implements  Serializable {
 
     public void setCaracteristicasSitio(String caracteristicasSitio) {
         this.caracteristicasSitio = caracteristicasSitio;
+    }
+
+    public String getDireccionSitio() {
+        return DireccionSitio;
+    }
+
+    public void setDireccionSitio(String DireccionSitio) {
+        this.DireccionSitio = DireccionSitio;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public List<Restaurant> getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(List<Restaurant> restaurant) {
+        this.restaurant = restaurant;
     }
 }

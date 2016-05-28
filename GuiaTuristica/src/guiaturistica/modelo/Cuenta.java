@@ -9,7 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -42,18 +45,18 @@ public class Cuenta implements Serializable{
     @Column (name = "claveUsuario")
     private String  claveUsuario;
 
-    @Column (name = "fechaCreacion")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date    fechaCreacion;
     
-    @Column (name = "fechaModificacion")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date    fechaModificacion;
 
     @Column (name = "estado")
     private String  estado;
 
-    @Column (name = "usuario")
-    private Usuario usuario;
     
+    @OneToOne(mappedBy = "cuenta")
+     private Usuario usuario;
 
     public Long getId_cuenta() {
         return id_cuenta;

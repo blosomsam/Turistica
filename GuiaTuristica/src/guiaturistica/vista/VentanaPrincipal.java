@@ -1,23 +1,50 @@
 package guiaturistica.vista;
 
+import guiaturistica.modelo.Usuario;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+
 /**
  * @author sandrojc
  */
 
 public class VentanaPrincipal extends javax.swing.JFrame {
+    protected void this_windowOpened(WindowEvent e) {
+        centrarVentana();
+    }
+
+    private void centrarVentana() {
+        // Se obtienen las dimensiones en pixels de la pantalla.
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        // Se obtienen las dimensiones en pixels de la ventana.
+        Dimension ventana = getSize();
+        // Una cuenta para situar la ventana en el centro de la pantalla.
+        setLocation((pantalla.width - ventana.width) / 2,
+                (pantalla.height - ventana.height) / 2);
+    }
+
+    private Usuario us;
 
     public VentanaPrincipal() {
         initComponents();
+        // Ventana maximizada al ejecutarce
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //la ventana desabilitada la funcion cambiar tamaño ventana
+        //this.setResizable(false);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        principal = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuInicio = new javax.swing.JMenu();
         MenuAdminHoteles1 = new javax.swing.JMenu();
-        MenuItemNuevo2 = new javax.swing.JMenuItem();
+        MNuevositio = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         MenuItemNuevo18 = new javax.swing.JMenuItem();
@@ -64,6 +91,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        javax.swing.GroupLayout principalLayout = new javax.swing.GroupLayout(principal);
+        principal.setLayout(principalLayout);
+        principalLayout.setHorizontalGroup(
+            principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 864, Short.MAX_VALUE)
+        );
+        principalLayout.setVerticalGroup(
+            principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 277, Short.MAX_VALUE)
+        );
+
         MenuInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/home-20x20.png"))); // NOI18N
         MenuInicio.setText("Inicio");
         jMenuBar1.add(MenuInicio);
@@ -72,15 +110,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         MenuAdminHoteles1.setText("Sitio");
         MenuAdminHoteles1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        MenuItemNuevo2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        MenuItemNuevo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/nuevo-16x16.png"))); // NOI18N
-        MenuItemNuevo2.setText("Nuevo");
-        MenuItemNuevo2.addActionListener(new java.awt.event.ActionListener() {
+        MNuevositio.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        MNuevositio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/nuevo-16x16.png"))); // NOI18N
+        MNuevositio.setText("Nuevo");
+        MNuevositio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemNuevo2ActionPerformed(evt);
+                MNuevositioActionPerformed(evt);
             }
         });
-        MenuAdminHoteles1.add(MenuItemNuevo2);
+        MenuAdminHoteles1.add(MNuevositio);
 
         jMenuItem6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/modificar-16x16.png"))); // NOI18N
@@ -398,11 +436,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 838, Short.MAX_VALUE)
+            .addComponent(principal)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addComponent(principal)
         );
 
         pack();
@@ -456,9 +494,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MenuItemNuevo17ActionPerformed
 
-    private void MenuItemNuevo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MenuItemNuevo2ActionPerformed
+    private void MNuevositioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MNuevositioActionPerformed
+        M1_SitioNuevo sit = new M1_SitioNuevo();
+        JInternalFrame iframe = new JInternalFrame();
+        sit.setUs(this.getUs());
+        iframe.add(sit);
+        iframe.pack();
+        iframe.setVisible(true);
+        iframe.setResizable(false);
+        iframe.setClosable(true);
+        this.principal.add(iframe);
+    }//GEN-LAST:event_MNuevositioActionPerformed
 
     private void MenuItemNuevo18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo18ActionPerformed
         // TODO add your handling code here:
@@ -516,6 +562,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MNuevositio;
     private javax.swing.JMenu MenuAdminCuentas;
     private javax.swing.JMenu MenuAdminCuentas1;
     private javax.swing.JMenu MenuAdminHoteles;
@@ -537,7 +584,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuItemNuevo17;
     private javax.swing.JMenuItem MenuItemNuevo18;
     private javax.swing.JMenuItem MenuItemNuevo19;
-    private javax.swing.JMenuItem MenuItemNuevo2;
     private javax.swing.JMenuItem MenuItemNuevo20;
     private javax.swing.JMenuItem MenuItemNuevo21;
     private javax.swing.JMenuItem MenuItemNuevo22;
@@ -563,5 +609,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    public static javax.swing.JDesktopPane principal;
     // End of variables declaration//GEN-END:variables
+
+    public Usuario getUs() {
+        return us;
+    }
+
+    public void setUs(Usuario us) {
+        this.us = us;
+    }
 }

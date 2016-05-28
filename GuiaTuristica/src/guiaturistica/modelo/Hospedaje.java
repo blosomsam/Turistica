@@ -29,28 +29,28 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Hospedaje implements Serializable {
     
     @Id
-    @Column (name = "")
+    @Column (name = "id_hospedaje")
     private Long    id_hospedaje;
 
-    @Column (name = "")
+    @Column (name = "tipoHospedaje")
     private String  tipoHospedaje;
 
-    @Column (name = "")
+    @Column (name = "nombreHospedaje")
     private String  nombreHospedaje;
 
-    @Column (name = "")
+    @Column (name = "direccionHospedaje")
     private String  direccionHospedaje;
 
-    @Column (name = "")
+    @Column (name = "categoriaHospedaje")
     private String  categoriaHospedaje;
 
-    @Column (name = "")
+    @Column (name = "telefonoFijoHospedaje")
     private String  telefonoFijoHospedaje;
 
-    @Column (name = "")
+    @Column (name = "telefonoCelularHospedaje")
     private String  telefonoCelularHospedaje;
 
-    @Column (name = "")
+    @Column (name = "correoElectronicoHospedaje")
     private String  correoElectronicoHospedaje;
 
     public Long getId_hospedaje() {

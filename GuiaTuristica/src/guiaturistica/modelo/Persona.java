@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -51,7 +53,7 @@ public class Persona implements Serializable{
     @Column(name = "direccion")
     private String direccion;
 
-    @Column(name = "fechaNacimieto")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaNacimieto;
 
     @Column(name = "nacionalidad")
