@@ -513,6 +513,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void MenuItemNuevo14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo14ActionPerformed
         // TODO add your handling code here:
+        M5_AdministrarTransporte atr = new M5_AdministrarTransporte();
+        principal.add(atr);
+        atr.setResizable(false);
+        atr.show();
     }//GEN-LAST:event_MenuItemNuevo14ActionPerformed
 
     private void MenuItemNuevo15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo15ActionPerformed
@@ -525,10 +529,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void MenuItemNuevo16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo16ActionPerformed
         // TODO add your handling code here:
+        M6_AdministrarUsuarios aus = new M6_AdministrarUsuarios();
+        principal.add(aus);
+        aus.setResizable(false);
+        aus.show();
     }//GEN-LAST:event_MenuItemNuevo16ActionPerformed
 
     private void MenuItemNuevo17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo17ActionPerformed
         // TODO add your handling code here:
+        M7_AdministraCuentas adcu = new M7_AdministraCuentas();
+        principal.add(adcu);
+        adcu.setResizable(false);
+        adcu.show();
     }//GEN-LAST:event_MenuItemNuevo17ActionPerformed
 
     private void MNuevositioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MNuevositioActionPerformed
@@ -574,6 +586,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void MenuItemNuevo20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo20ActionPerformed
         // TODO add your handling code here:
+        M8_AdministrarTuristas adt = new M8_AdministrarTuristas();
+        principal.add(adt);
+        adt.setResizable(false);
+        adt.show();
     }//GEN-LAST:event_MenuItemNuevo20ActionPerformed
 
     private void MenuItemNuevo21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo21ActionPerformed
@@ -587,6 +603,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void MenuItemNuevo22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo22ActionPerformed
         // TODO add your handling code here:
+        M9_AdministrarRutas adtu = new M9_AdministrarRutas();
+        principal.add(adtu);
+        adtu.setResizable(false);
+        adtu.show();
     }//GEN-LAST:event_MenuItemNuevo22ActionPerformed
 
     /**
