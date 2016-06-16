@@ -93,10 +93,11 @@ public class AutentificacionUsuarios extends javax.swing.JDialog {
         });
 
         BtnAcceder.setFont(new java.awt.Font("Droid Sans Mono", 0, 12)); // NOI18N
-        BtnAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/candado-20x20-.png"))); // NOI18N
+        BtnAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/candadoCerrado-20x20.png"))); // NOI18N
         BtnAcceder.setText("Acceder");
         BtnAcceder.setBorderPainted(false);
-        BtnAcceder.setRequestFocusEnabled(false);
+        BtnAcceder.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/candado-20x20-.png"))); // NOI18N
+        BtnAcceder.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/candadoCerrado2-20x20.png"))); // NOI18N
         BtnAcceder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAccederActionPerformed(evt);
@@ -193,7 +194,7 @@ public class AutentificacionUsuarios extends javax.swing.JDialog {
                     .addComponent(JTextUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnSalir))
                 .addGap(25, 25, 25))
         );

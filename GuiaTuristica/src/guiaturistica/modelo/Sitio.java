@@ -69,19 +69,44 @@ public class Sitio implements  Serializable {
     @Column(name = "caracteristicasSitio")
     private String caracteristicasSitio;  
     
-   //Relació de muchos sitios a un registrador 
-   @ManyToOne
-   private Persona persona;
-   
-   //Relación de muchos Sitios  a muchos Restaurantes
-   @ManyToMany(cascade = CascadeType.ALL)
-   @JoinTable(name = "Sitio_Restaurant", joinColumns = @JoinColumn(
-        name = "id_Sitio", referencedColumnName = "id_Sitio"),
-        inverseJoinColumns = @JoinColumn(name = "id_Restaurant", 
-        referencedColumnName = "id_Restaurant"))
-   private List<Restaurant> restaurant;
+    
+    //RELACIONES ENTRE  CLASES
+    
+    //Relación con persona @ManyToOne 
+    @ManyToOne
+    private Persona persona;
+    
+    //Relación con restaurant @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "Sitio_Restaurant", joinColumns = @JoinColumn(name = "id_sitio", referencedColumnName = "id_sitio"),
+            inverseJoinColumns = @JoinColumn(name = "id_restaurant", referencedColumnName = "id_restaurant"))
+    private List<Restaurant> restaurant;
+    
+    //Relación con Rutas @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "Sitio_Ruta", joinColumns = @JoinColumn(name = "id_sitio", referencedColumnName = "id_sitio"),
+            inverseJoinColumns = @JoinColumn(name = "id_ruta", referencedColumnName = "id_ruta"))
+    private List<Ruta> ruta;
+    
+    //Relación con Hospedaje @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "Sitio_Tienda", joinColumns = @JoinColumn(name = "id_sitio", referencedColumnName = "id_sitio"),
+            inverseJoinColumns = @JoinColumn(name = "id_tienda", referencedColumnName = "id_tienda"))
+    private List<Tienda> tienda;
+    
+    //Relación con Rutas @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "Sitio_Transporte", joinColumns = @JoinColumn(name = "id_sitio", referencedColumnName = "id_sitio"),
+            inverseJoinColumns = @JoinColumn(name = "id_transporte", referencedColumnName = "id_transporte"))
+    private List<Transporte> transporte;
+    
+    //Relación con Hospedaje @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "Sitio_Hospedaje", joinColumns = @JoinColumn(name = "id_sitio", referencedColumnName = "id_sitio"),
+            inverseJoinColumns = @JoinColumn(name = "id_hospedaje", referencedColumnName = "id_hospedaje"))
+    private List<Hospedaje> hospedaje;
 
-    //Métodos set y get
+    //MÉTODOS SET Y GET
     public Long getId_sitio() {
         return id_sitio;
     }
@@ -176,5 +201,37 @@ public class Sitio implements  Serializable {
 
     public void setRestaurant(List<Restaurant> restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public List<Hospedaje> getHospedaje() {
+        return hospedaje;
+    }
+
+    public void setHospedaje(List<Hospedaje> hospedaje) {
+        this.hospedaje = hospedaje;
+    }
+
+    public List<Ruta> getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(List<Ruta> ruta) {
+        this.ruta = ruta;
+    }
+
+    public List<Transporte> getTransporte() {
+        return transporte;
+    }
+
+    public void setTransporte(List<Transporte> transporte) {
+        this.transporte = transporte;
+    }
+
+    public List<Tienda> getTienda() {
+        return tienda;
+    }
+
+    public void setTienda(List<Tienda> tienda) {
+        this.tienda = tienda;
     }
 }

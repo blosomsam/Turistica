@@ -9,12 +9,12 @@ package guiaturistica.vista;
  *
  * @author sandrojc
  */
-public class M1_SitioBuscar extends javax.swing.JPanel {
+public class M2_HospedajeModificar extends javax.swing.JPanel {
 
     /**
-     * Creates new form NewJPanel
+     * Creates new form HotelModificar
      */
-    public M1_SitioBuscar() {
+    public M2_HospedajeModificar() {
         initComponents();
     }
 

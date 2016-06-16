@@ -1,9 +1,14 @@
 package guiaturistica.modelo;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -30,13 +35,17 @@ public class Hospedaje implements Serializable {
     
     @Id
     @Column (name = "id_hospedaje")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long    id_hospedaje;
-
+    
     @Column (name = "tipoHospedaje")
     private String  tipoHospedaje;
 
     @Column (name = "nombreHospedaje")
     private String  nombreHospedaje;
+    
+    @Column (name = "serviciosHospedaje")
+    private String  serviciosHospedaje;
 
     @Column (name = "direccionHospedaje")
     private String  direccionHospedaje;
@@ -52,7 +61,18 @@ public class Hospedaje implements Serializable {
 
     @Column (name = "correoElectronicoHospedaje")
     private String  correoElectronicoHospedaje;
+    
 
+    //RELACIONES ENTRE LAS CLASES
+    
+    //Relación con sitio @ManyToMany
+    @ManyToMany(mappedBy = "hospedaje",cascade = CascadeType.ALL, targetEntity = Sitio.class)
+    private List<Sitio> sitio;
+    //Relación con sitio @ManyToMany
+
+    
+    
+    //MÉTODOS SET Y GET
     public Long getId_hospedaje() {
         return id_hospedaje;
     }
@@ -115,5 +135,21 @@ public class Hospedaje implements Serializable {
 
     public void setCorreoElectronicoHospedaje(String correoElectronicoHospedaje) {
         this.correoElectronicoHospedaje = correoElectronicoHospedaje;
+    }
+
+    public List<Sitio> getSitio() {
+        return sitio;
+    }
+
+    public void setSitio(List<Sitio> sitio) {
+        this.sitio = sitio;
+    }
+
+    public String getServiciosHospedaje() {
+        return serviciosHospedaje;
+    }
+
+    public void setServiciosHospedaje(String serviciosHospedaje) {
+        this.serviciosHospedaje = serviciosHospedaje;
     }
 }

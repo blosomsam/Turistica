@@ -1,16 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package guiaturistica.vista;
 
 import guiaturistica.Util.JPAUtil;
 import guiaturistica.controlador.SitioJpaControl;
 import guiaturistica.modelo.Sitio;
 import guiaturistica.modelo.Usuario;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 /**
+ *
  * @author sandrojc
  */
-
-public class M1_SitioNuevo extends javax.swing.JPanel {
+public class M1_SitioNuevo extends javax.swing.JInternalFrame {
 
     Sitio sit;
     SitioJpaControl sitjpa;
@@ -32,8 +38,13 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
         sit.setServiciosSitio(ButRadioTV.getText());
         sit.setTelefonoCelularSitio(JTextTelefonoCelular.getText());
         sit.setTelefonoCasaSitio(JTextTelefonoLugar.getText());
-        sit.setPersona(this.getUs());   
+        sit.setPersona(us);
+        
+        sitjpa = new SitioJpaControl(JPAUtil.getEntityManagerFactory());
+        sitjpa.crear(sit);
+        
         return sit;
+        
     }
     
     private void limpiar(){        
@@ -47,11 +58,11 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
         JTextTelefonoLugar.setText("");
         JTextDireccion.setText("");
 }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BtnSalir = new javax.swing.JButton();
         PanelServicios = new javax.swing.JPanel();
         ButRadioEstacionamiento = new javax.swing.JRadioButton();
         ButRadioAparcamiento = new javax.swing.JRadioButton();
@@ -65,15 +76,6 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
         ButRadioTobogan = new javax.swing.JRadioButton();
         ButRadioSalaEventos = new javax.swing.JRadioButton();
         ButRadioTV = new javax.swing.JRadioButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        JTxtACaracteristicas = new javax.swing.JTextArea();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        JTxtADescripcion = new javax.swing.JTextArea();
-        BtnSalir = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         PanelDatosGenerales = new javax.swing.JPanel();
         JTextTelefonoCelular = new javax.swing.JTextField();
@@ -88,11 +90,33 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
         JTextDireccion = new javax.swing.JTextField();
         JTextClima = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        JTxtACaracteristicas = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        JTxtADescripcion = new javax.swing.JTextArea();
 
-        PanelServicios.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Servicios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 0, 102))); // NOI18N
+        setClosable(true);
+        setIconifiable(true);
+
+        BtnSalir.setFont(new java.awt.Font("Droid Sans Mono", 0, 12)); // NOI18N
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/cancelar-28x28.png"))); // NOI18N
+        BtnSalir.setText("cancelar");
+        BtnSalir.setBorderPainted(false);
+        BtnSalir.setRequestFocusEnabled(false);
+        BtnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSalirActionPerformed(evt);
+            }
+        });
+
+        PanelServicios.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Servicios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DejaVu Sans", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
         PanelServicios.setForeground(new java.awt.Color(102, 0, 102));
 
         ButRadioEstacionamiento.setText("restaurant");
@@ -231,38 +255,6 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel9.setText("Descripción:");
-
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel12.setText("Características:");
-
-        JTxtACaracteristicas.setColumns(20);
-        JTxtACaracteristicas.setRows(5);
-        jScrollPane1.setViewportView(JTxtACaracteristicas);
-
-        jLabel10.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel11.setFont(new java.awt.Font("URW Bookman L", 3, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel11.setText("TURISTICOS");
-
-        JTxtADescripcion.setColumns(20);
-        JTxtADescripcion.setRows(5);
-        jScrollPane2.setViewportView(JTxtADescripcion);
-
-        BtnSalir.setFont(new java.awt.Font("Droid Sans Mono", 0, 12)); // NOI18N
-        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/cancelar-28x28.png"))); // NOI18N
-        BtnSalir.setText("cancelar");
-        BtnSalir.setBorderPainted(false);
-        BtnSalir.setRequestFocusEnabled(false);
-        BtnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSalirActionPerformed(evt);
-            }
-        });
-
         btnGuardar.setFont(new java.awt.Font("Droid Sans Mono", 0, 12)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/guardar-28x28.png"))); // NOI18N
         btnGuardar.setText("guargar");
@@ -274,7 +266,7 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
             }
         });
 
-        PanelDatosGenerales.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Datos generales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(102, 0, 102))); // NOI18N
+        PanelDatosGenerales.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Datos generales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DejaVu Sans", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
         PanelDatosGenerales.setForeground(new java.awt.Color(102, 0, 102));
 
         JTextTelefonoCelular.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -346,7 +338,7 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
                     .addComponent(JTextDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTextTelefonoLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTextDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         PanelDatosGeneralesLayout.setVerticalGroup(
             PanelDatosGeneralesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,14 +363,27 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
                         .addComponent(JTextClima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel7))
                     .addComponent(JTextDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel9.setText("Descripción:");
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel12.setText("Características:");
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/hojas.png"))); // NOI18N
+
+        JTxtACaracteristicas.setColumns(20);
+        JTxtACaracteristicas.setRows(5);
+        jScrollPane1.setViewportView(JTxtACaracteristicas);
 
         jLabel13.setFont(new java.awt.Font("URW Bookman L", 3, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 102, 255));
         jLabel13.setText("REGISTRO DE SITIOS ");
+
+        jLabel10.setBackground(new java.awt.Color(0, 204, 255));
+        jLabel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jButton6.setFont(new java.awt.Font("Droid Sans Mono", 0, 12)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/lupa-16x16.png"))); // NOI18N
@@ -391,30 +396,18 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        jLabel11.setFont(new java.awt.Font("URW Bookman L", 3, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel11.setText("TURISTICOS");
+
+        JTxtADescripcion.setColumns(20);
+        JTxtADescripcion.setRows(5);
+        jScrollPane2.setViewportView(JTxtADescripcion);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(PanelServicios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel12))
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGuardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnSalir)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -430,11 +423,29 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(213, 213, 213)
                                 .addComponent(jLabel11)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(PanelDatosGenerales, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PanelServicios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PanelDatosGenerales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(15, 15, 15))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(442, 442, 442)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnSalir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnGuardar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -465,14 +476,16 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
                         .addComponent(jLabel12))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(34, 34, 34)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
-                    .addComponent(BtnSalir))
-                .addContainerGap(13, Short.MAX_VALUE))
+                    .addComponent(BtnSalir)
+                    .addComponent(btnGuardar))
+                .addGap(15, 15, 15))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
@@ -480,18 +493,91 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
         this.setVisible(false);
     }//GEN-LAST:event_BtnSalirActionPerformed
 
+    private void ButRadioEstacionamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioEstacionamientoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioEstacionamientoActionPerformed
+
+    private void ButRadioAparcamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioAparcamientoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioAparcamientoActionPerformed
+
+    private void ButRadioInternetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioInternetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioInternetActionPerformed
+
+    private void ButRadioPiscinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioPiscinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioPiscinaActionPerformed
+
+    private void ButRadioBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioBarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioBarActionPerformed
+
+    private void ButRadioJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioJuegosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioJuegosActionPerformed
+
+    private void ButRadioCalefaccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioCalefaccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioCalefaccionActionPerformed
+
+    private void ButRadioCanchasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioCanchasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioCanchasActionPerformed
+
+    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton9ActionPerformed
+
+    private void ButRadioToboganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioToboganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioToboganActionPerformed
+
+    private void ButRadioSalaEventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioSalaEventosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioSalaEventosActionPerformed
+
+    private void ButRadioTVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioTVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButRadioTVActionPerformed
+
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         try {
             cargarDatos();
-            sitjpa = new SitioJpaControl(JPAUtil.getEntityManagerFactory());
-            sit = cargarDatos();
-            sitjpa.crear(sit);
+            // sentencia para administrar sitio
+            int Integer = JOptionPane.showConfirmDialog(this, " Guardado "
+                + "\n" + " Administar sitio");
+            if (Integer == 0) {
 
-            JOptionPane.showMessageDialog(null, " Guardado correctamente");
-            limpiar();
+//                AñadirElementosSitio addElemtos = new AñadirElementosSitio();
+//                JInternalFrame ji = new JInternalFrame("Admin. Sitio");
+//                
+//                ji.add(addElemtos);
+//                ji.pack();
+//                ji.setResizable(false);
+//                ji.setClosable(true);
+//                VentanaPrincipal.principal.add(ji);
+//                ji.toFront();
+//                ji.setVisible(true);
+//                this.setVisible(false);
+
+                AñadirElementosSitio addE = new AñadirElementosSitio();
+                VentanaPrincipal.principal.add(addE);
+                addE.toFront();
+                addE.setVisible(true);
+                this.setVisible(false);
+
+            } if(Integer == 1) {
+                this.setVisible(false);
+                
+            }
+            if (Integer ==  2) {
+                setVisible(false);
+                
+            }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error"); 
+            JOptionPane.showMessageDialog(null, "Error" + e);
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -506,54 +592,6 @@ public class M1_SitioNuevo extends javax.swing.JPanel {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void ButRadioTVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioTVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioTVActionPerformed
-
-    private void ButRadioSalaEventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioSalaEventosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioSalaEventosActionPerformed
-
-    private void ButRadioToboganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioToboganActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioToboganActionPerformed
-
-    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton9ActionPerformed
-
-    private void ButRadioCanchasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioCanchasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioCanchasActionPerformed
-
-    private void ButRadioCalefaccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioCalefaccionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioCalefaccionActionPerformed
-
-    private void ButRadioJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioJuegosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioJuegosActionPerformed
-
-    private void ButRadioBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioBarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioBarActionPerformed
-
-    private void ButRadioPiscinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioPiscinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioPiscinaActionPerformed
-
-    private void ButRadioInternetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioInternetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioInternetActionPerformed
-
-    private void ButRadioAparcamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioAparcamientoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioAparcamientoActionPerformed
-
-    private void ButRadioEstacionamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRadioEstacionamientoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButRadioEstacionamientoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

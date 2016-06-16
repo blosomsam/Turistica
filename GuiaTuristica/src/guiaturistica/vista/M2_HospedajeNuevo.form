@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <Properties>
+    <Property name="closable" type="boolean" value="true"/>
+    <Property name="iconifiable" type="boolean" value="true"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel10" max="32767" attributes="0"/>
+                          <Component id="JBtnExaminar" pref="123" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="BtnSalir" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="BtnGuardar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jlabel" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jlabel1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                          <Component id="JCBTipoHospedaj" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="JCBTipoHospedaje" min="-2" pref="94" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="109" pref="109" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="JTFDireccionHospedaje" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
+                                                  <Component id="JTFTelefonoHospedaje" alignment="0" min="-2" pref="184" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="JCBCategoriaHospedaj" min="-2" pref="52" max="-2" attributes="0"/>
+                                                          <EmptySpace max="32767" attributes="0"/>
+                                                          <Component id="JCBCategoriaHospedaje" min="-2" pref="89" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="JTFNombreHospedaje" min="-2" pref="183" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Component id="JFTCelularHospedaje" alignment="0" min="-2" pref="184" max="-2" attributes="0"/>
+                                              <Component id="JTFCorreoHospedaje" alignment="0" min="-2" pref="184" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="4" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="JPnlServicios" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jlabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jlabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="JCBTipoHospedaj" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JCBTipoHospedaje" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="JCBCategoriaHospedaj" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JCBCategoriaHospedaje" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="JTFNombreHospedaje" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="JTFDireccionHospedaje" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Component id="JTFTelefonoHospedaje" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jLabel10" alignment="1" min="-2" pref="146" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JFTCelularHospedaje" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JTFCorreoHospedaje" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="JBtnExaminar" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Component id="JPnlServicios" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BtnSalir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="0" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="JBtnExaminar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Droid Sans Mono" size="12" style="0"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/guiaturistica/imagenes/lupa-16x16.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Examinar"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBtnExaminarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnGuardar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Droid Sans Mono" size="12" style="0"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/guiaturistica/imagenes/guardar-28x28.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="guargar"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGuardarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnSalir">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Droid Sans Mono" size="12" style="0"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/guiaturistica/imagenes/cancelar-28x28.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="cancelar"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSalirActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="JTFTelefonoHospedaje">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="JTFDireccionHospedaje">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="JTFNombreHospedaje">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nombre"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Direcci&#xf3;n:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Telef&#xf3;no:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel13">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Bookman L" size="24" style="3"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="REGISTRO DE "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Bookman L" size="24" style="3"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="HOSPEDAJE "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/guiaturistica/imagenes/engranajes.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="JPnlServicios">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Servicios">
+              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder/>
+              </Border>
+              <Font PropertyName="font" name="DejaVu Sans" size="12" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="JRBtnHabitacionSimple" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnInternet" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnEstacionamiento" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnServicioHabitación" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnBar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnKaraoke" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnSauna" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnCanchas" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="JRBtnPicina" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnHabitacionDoble" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnTV" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnSalonEventos" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnRestaurante" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnTurco" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnDucha" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnBaño" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JRBtnHabitacionSimple" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnHabitacionDoble" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JRBtnInternet" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnBaño" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JRBtnEstacionamiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnTV" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JRBtnServicioHabitación" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnSalonEventos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JRBtnBar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnRestaurante" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="JRBtnPicina" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnKaraoke" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JRBtnSauna" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnTurco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JRBtnCanchas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBtnDucha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JRadioButton" name="JRBtnInternet">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Internet"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnHabitacionDoble">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Habitaci&#xf3;n doble"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnHabitacionSimple">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Habitaci&#xf3;n simple"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnDucha">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ducha"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnEstacionamiento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Estacionamiento"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnServicioHabitaci&#xf3;n">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Servicio a la habitaci&#xf3;n"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnTV">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TV Cable"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnSalonEventos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sal&#xf3;n de eventos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnBar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBtnBarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnRestaurante">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Restaurant"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnPicina">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Picina"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBtnPicinaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnKaraoke">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Karaoke"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBtnKaraokeActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnSauna">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sauna"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBtnSaunaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnTurco">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Turco"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBtnTurcoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnCanchas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Canchas"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBtnCanchasActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="JRBtnBa&#xf1;o">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ba&#xf1;o"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JComboBox" name="JCBCategoriaHospedaj">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="2"/>
+            <StringItem index="1" value="3"/>
+            <StringItem index="2" value="4"/>
+            <StringItem index="3" value="5"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Categor&#xed;a:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="JCBTipoHospedaj">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Hotel"/>
+            <StringItem index="1" value="Hostal"/>
+            <StringItem index="2" value="Posada"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Tipo:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="C&#xe9;lular"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="JFTCelularHospedaje">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JFTCelularHospedajeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Correo-e:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="JTFCorreoHospedaje">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="JCBCategoriaHospedaje">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="JCBTipoHospedaje">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

@@ -1,5 +1,6 @@
 package guiaturistica.vista;
 
+import guiaturistica.Util.JPAUtil;
 import guiaturistica.modelo.Usuario;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -15,7 +16,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     protected void this_windowOpened(WindowEvent e) {
         centrarVentana();
     }
-
+    
     private void centrarVentana() {
         // Se obtienen las dimensiones en pixels de la pantalla.
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -25,8 +26,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setLocation((pantalla.width - ventana.width) / 2,
                 (pantalla.height - ventana.height) / 2);
     }
-
-    private Usuario us;
+ private Usuario us;
+   
 
     public VentanaPrincipal() {
         initComponents();
@@ -99,7 +100,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         principalLayout.setVerticalGroup(
             principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 82, Short.MAX_VALUE)
         );
 
         MenuInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiaturistica/imagenes/home-20x20.png"))); // NOI18N
@@ -447,23 +448,47 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuItemNuevo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo1ActionPerformed
-       
+       M2_HospedajeNuevo hos = new M2_HospedajeNuevo();
+        //hos.setUs(this.getUs());
+        hos.setResizable(false);
+        principal.add(hos);
+        hos.show();
     }//GEN-LAST:event_MenuItemNuevo1ActionPerformed
 
     private void MenuItemNuevo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo7ActionPerformed
         // TODO add your handling code here:
+        M3_TiendaNuevo tie = new M3_TiendaNuevo();
+        //hos.setUs(this.getUs());
+        tie.setResizable(false);
+        principal.add(tie);
+        tie.show();
     }//GEN-LAST:event_MenuItemNuevo7ActionPerformed
 
     private void MenuItemNuevo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo8ActionPerformed
         // TODO add your handling code here:
+        M5_TransporteNuevo tra = new M5_TransporteNuevo();
+        //hos.setUs(this.getUs());
+        tra.setResizable(false);
+        principal.add(tra);
+        tra.show();
     }//GEN-LAST:event_MenuItemNuevo8ActionPerformed
 
     private void MenuItemNuevo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo9ActionPerformed
         // TODO add your handling code here:
+         M4_RestaurantNuevo hos = new M4_RestaurantNuevo();
+        //hos.setUs(this.getUs());
+        hos.setResizable(false);
+        principal.add(hos);
+        hos.show();
     }//GEN-LAST:event_MenuItemNuevo9ActionPerformed
 
     private void MenuItemNuevo10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo10ActionPerformed
         // TODO add your handling code here:
+        M6_UsuarioNuevo hosp = new M6_UsuarioNuevo();
+        //hos.setUs(this.getUs());
+        //hosp.setResizable(false);
+        principal.add(hosp);
+        hosp.show();
     }//GEN-LAST:event_MenuItemNuevo10ActionPerformed
 
     private void MenuItemNuevo11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo11ActionPerformed
@@ -472,10 +497,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void MenuItemNuevo12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo12ActionPerformed
         // TODO add your handling code here:
+        M2_AdministarHospedaje ah = new M2_AdministarHospedaje();
+        principal.add(ah);
+        ah.setResizable(false);
+        ah.show();
     }//GEN-LAST:event_MenuItemNuevo12ActionPerformed
 
     private void MenuItemNuevo13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo13ActionPerformed
         // TODO add your handling code here:
+        M3_AdministrarTiendas at = new M3_AdministrarTiendas();
+        principal.add(at);
+        at.setResizable(false);
+        at.show();
     }//GEN-LAST:event_MenuItemNuevo13ActionPerformed
 
     private void MenuItemNuevo14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo14ActionPerformed
@@ -495,23 +528,44 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuItemNuevo17ActionPerformed
 
     private void MNuevositioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MNuevositioActionPerformed
-        M1_SitioNuevo sit = new M1_SitioNuevo();
-        JInternalFrame iframe = new JInternalFrame();
-        sit.setUs(this.getUs());
-        iframe.add(sit);
-        iframe.pack();
-        iframe.setVisible(true);
-        iframe.setResizable(false);
-        iframe.setClosable(true);
-        this.principal.add(iframe);
+        //M1_SitioNuevo sit = new M1_SitioNuevo();
+        //JInternalFrame iframe = new JInternalFrame();
+        //sit.setUs(this.getUs());
+        //iframe.add(sit);
+        //iframe.pack();
+        //iframe.setVisible(true);
+//        iframe.setResizable(false);
+//        iframe.setClosable(true);
+//        this.principal.add(iframe);
+        
+        // Nuevo método para llamar a la patalla nuevo Sitio
+        M1_SitioNuevo sn = new M1_SitioNuevo();
+        sn.setUs(this.getUs());
+        sn.setResizable(false);
+        principal.add(sn);
+        sn.show();
+
+        
+        // segunda forma para usar un internal frame:        
     }//GEN-LAST:event_MNuevositioActionPerformed
 
     private void MenuItemNuevo18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo18ActionPerformed
         // TODO add your handling code here:
+
+        M1_AdministrarSitio as = new M1_AdministrarSitio();
+        as.setResizable(false);
+        principal.add(as);
+        as.show();
+    
     }//GEN-LAST:event_MenuItemNuevo18ActionPerformed
 
     private void MenuItemNuevo19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo19ActionPerformed
         // TODO add your handling code here:
+        M8_TuristaNuevo tur = new M8_TuristaNuevo();
+        //re.setUs(this.getUs());
+        //tur.setResizable(false);
+        principal.add(tur);
+        tur.show();
     }//GEN-LAST:event_MenuItemNuevo19ActionPerformed
 
     private void MenuItemNuevo20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo20ActionPerformed
@@ -520,6 +574,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void MenuItemNuevo21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo21ActionPerformed
         // TODO add your handling code here:
+        M9_RutaNuevo rut = new M9_RutaNuevo();
+        //rut.setUs(this.getUs());
+        rut.setResizable(false);
+        principal.add(rut);
+        rut.show();
     }//GEN-LAST:event_MenuItemNuevo21ActionPerformed
 
     private void MenuItemNuevo22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo22ActionPerformed
@@ -615,7 +674,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public Usuario getUs() {
         return us;
     }
-
     public void setUs(Usuario us) {
         this.us = us;
     }
