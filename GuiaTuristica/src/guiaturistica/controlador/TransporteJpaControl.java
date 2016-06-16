@@ -38,16 +38,16 @@ public class TransporteJpaControl implements Serializable {
     }
     
     //para consultar
-    public List<Transporte> buscarPersonaEntidad(){
-        return buscarPersonaEntidad(true, -1, -1); 
+    public List<Transporte> buscarTransporteEntidad(){
+        return buscarTransporteEntidad(true, -1, -1); 
     }
     
-    public List<Transporte> buscarPersonaEntidad(int maxResultados, 
+    public List<Transporte> buscarTransporteEntidad(int maxResultados, 
             int minimosResulatados){
-        return  buscarPersonaEntidad(false, maxResultados, minimosResulatados);
+        return  buscarTransporteEntidad(false, maxResultados, minimosResulatados);
     }
     
-    private List<Transporte> buscarPersonaEntidad(boolean all, 
+    private List<Transporte> buscarTransporteEntidad(boolean all, 
             int maxResulatados, int minimosResulatados){
         EntityManager em = getEntityManager();
         
