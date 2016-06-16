@@ -517,6 +517,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void MenuItemNuevo15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo15ActionPerformed
         // TODO add your handling code here:
+        M4_AdministrarRestaurantes ar = new M4_AdministrarRestaurantes();
+        principal.add(ar);
+        ar.setResizable(false);
+        ar.show();
     }//GEN-LAST:event_MenuItemNuevo15ActionPerformed
 
     private void MenuItemNuevo16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemNuevo16ActionPerformed
