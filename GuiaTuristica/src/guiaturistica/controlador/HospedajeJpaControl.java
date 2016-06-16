@@ -68,31 +68,14 @@ public class HospedajeJpaControl implements  Serializable{
         }
     }
 
-    //Método actualizar
-    //Métodos buscar 
-    public Hospedaje buscarHospedaje(long id) {
+    //metodo actualizar
+    
+    //metodo buscar por id
+    public Hospedaje buscarHospedaje(long id){
         EntityManager em = getEntityManager();
-        try {
+        try{
             return em.find(Hospedaje.class, id);
-
-        } finally {
-            em.close();
-        }
-    }
-
-    public Hospedaje buscarHospedaje(String user) {
-        EntityManager em = getEntityManager();
-        boolean all = true;
-        try {
-            CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Hospedaje.class));
-            Query q = em.createQuery(cq);
-            if (!all) {
-                q.getParameterValue(user);
-            }
-            return (Hospedaje) q.getSingleResult();
-
-        } finally {
+        }finally{
             em.close();
         }
     }

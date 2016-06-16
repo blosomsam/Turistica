@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -36,7 +37,6 @@ public class Restaurant implements  Serializable{
     @Id
     @Column (name = "id_restaurant")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    
     private Long    id_restaurant;
     
     @Column (name = "nombreRestaurant")
@@ -50,8 +50,8 @@ public class Restaurant implements  Serializable{
    
     @Column (name = "valorPromedioPlato")
     private double  valorPromedioPlato;
-    
-    //Relación con sitio Muchos a muchos
+     
+    //Relación con sitio @ManyToMany
     @ManyToMany(mappedBy = "restaurant",cascade = CascadeType.ALL, targetEntity = Sitio.class)
     private List<Sitio> sitio;
     

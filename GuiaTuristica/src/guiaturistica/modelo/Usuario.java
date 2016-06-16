@@ -45,6 +45,8 @@ public class Usuario extends Persona implements  Serializable {
      * diagrama de clases y diagrama de secuencia. 
      * Relacion uno a uno
      */
+    
+    
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     // union entre dos culumnas, relación con la clase id cuenta
     @JoinColumn(name = "id_cuenta")

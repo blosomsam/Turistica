@@ -1,11 +1,14 @@
 package guiaturistica.modelo;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -22,9 +25,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "tienda.BuscarAll",
             query = "SELECT o FROM Tienda o"),
     @NamedQuery(name = "tienda.BuscarPorId",
-            query = "SELECT o FROM Tienda o WHERE o.id_tienda = :id_tienda "),
+            query = "SELECT o FROM Tienda o WHERE o.id_tienda = :id_tienda"),
     @NamedQuery(name = "Tienda.BuscarPorTipo",
-            query = "SELECT o FROM Tienda o WHERE o.tipoTienda = :tipoTienda ")
+            query = "SELECT o FROM Tienda o WHERE o.tipoTienda = :tipoTienda")
 })
 
 public class Tienda implements  Serializable{
@@ -47,6 +50,15 @@ public class Tienda implements  Serializable{
         private String  telefonoTienda;
     
 
+    //RELACIONES ENTRE LAS CLASES
+    
+    //Relación con sitio @ManyToMany
+    @ManyToMany(mappedBy = "tienda",cascade = CascadeType.ALL, targetEntity = Sitio.class)
+    private List<Sitio> sitio;
+    
+    
+    //MÉTODOS SET Y GET
+    
     public long getId_tienda() {
         return id_tienda;
     }
@@ -85,5 +97,13 @@ public class Tienda implements  Serializable{
 
     public void setTelefonoTienda(String telefonoTienda) {
         this.telefonoTienda = telefonoTienda;
+    }
+
+    public List<Sitio> getSitio() {
+        return sitio;
+    }
+
+    public void setSitio(List<Sitio> sitio) {
+        this.sitio = sitio;
     }
 }

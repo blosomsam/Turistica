@@ -1,11 +1,14 @@
 package guiaturistica.modelo;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -23,7 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
               query = "SELECT o FROM Ruta o"),
       @NamedQuery(name = "ruta.buscarPorId", 
               query = "SELECT o FROM Ruta o WHERE o.id_ruta= :id_ruta"),
-      @NamedQuery(name = "Ruta.buscarPorNombre", 
+      @NamedQuery(name = "ruta.buscarPorNombre", 
               query = "SELECT o FROM Ruta o WHERE o.nombreRuta = :nombreRuta"),
       })
 
@@ -49,6 +52,15 @@ public class Ruta implements Serializable {
     @Column (name = "tiempo")
     private String  tiempo;
 
+
+    //RELACIONES ENTRE LAS CLASES
+    
+    //Relación con sitio @ManyToMany
+    @ManyToMany(mappedBy = "ruta",cascade = CascadeType.ALL, targetEntity = Sitio.class)
+    private List<Sitio> sitio;
+    
+    
+    //MÉTODOS SET Y GET
     
     public Long getId_ruta() {
         return id_ruta;
@@ -96,6 +108,14 @@ public class Ruta implements Serializable {
 
     public void setNombreRuta(String nombreRuta) {
         this.nombreRuta = nombreRuta;
+    }
+
+    public List<Sitio> getSitio() {
+        return sitio;
+    }
+
+    public void setSitio(List<Sitio> sitio) {
+        this.sitio = sitio;
     }
     
 }

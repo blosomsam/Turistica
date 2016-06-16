@@ -20,7 +20,6 @@ public class GuiaTuristica {
         au.setVisible(true);
         
         //CREAR UN USUARIO ADMINISTRADOR CON CONTRASEÑA
-        //CuentaJpaControl cjpa = new CuentaJpaControl(JPAUtil.getEntityManagerFactory());
 //        Cuenta cu = new Cuenta();
 //        cu.setNombreUsuario("blosom");
 //        cu.setClaveUsuario("1234");
@@ -43,5 +42,7 @@ public class GuiaTuristica {
 //        
 //        us.setCuenta(cu);
 //        usc.crear(us);     
-    } 
+
+//notas el restaurant se autogenera 
+    }
 }

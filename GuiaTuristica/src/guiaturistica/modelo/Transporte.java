@@ -1,13 +1,17 @@
 package guiaturistica.modelo;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -27,9 +31,6 @@ import javax.xml.bind.annotation.XmlRootElement;
     
     @NamedQuery(name = "transporte.BuscarPorNombre",
             query = "SELECT o FROM Transporte o WHERE o.nombreTransporte= :nombreTransporte"),
-    
-    @NamedQuery(name = "transporte.BuscarPorHorario",
-            query = "SELECT o FROM Transporte o WHERE o.horarioTransporte= :horarioTransporte")
 })
 
 public class Transporte implements Serializable {
@@ -42,6 +43,7 @@ public class Transporte implements Serializable {
     @Column(name = "nombreTransporte")
     private String nombreTransporte;
     
+    //@PersistenceContext(unitName="entityManager")
     @Column(name = "tipo_transporte")
     private String tipo_transporte;
     
@@ -50,10 +52,18 @@ public class Transporte implements Serializable {
     
     @Column(name = "caracteristicaTransporte")
     private String caracteristicaTransporte;
-    
-    
+      
 
-    public Long getId_transporte() {
+    //RELACIONES ENTRE LAS CLASES
+    
+    //Relación con sitio @ManyToMany
+    @ManyToMany(mappedBy = "transporte",cascade = CascadeType.ALL, targetEntity = Sitio.class)
+    private List<Sitio> sitio;
+    
+    
+    //MÉTODOS SET Y GET
+    
+        public Long getId_transporte() {
         return id_transporte;
     }
 
@@ -91,5 +101,13 @@ public class Transporte implements Serializable {
 
     public void setCaracteristicaTransporte(String caracteristicaTransporte) {
         this.caracteristicaTransporte = caracteristicaTransporte;
+    }
+
+    public List<Sitio> getSitio() {
+        return sitio;
+    }
+
+    public void setSitio(List<Sitio> sitio) {
+        this.sitio = sitio;
     }
 }
